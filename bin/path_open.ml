@@ -146,6 +146,8 @@ let text index document_src ~editor ~path ~search_result =
           Fmt.str "%s %s:%d" editor path line_num
         | "jed" | "xjed" ->
           Fmt.str "%s %s -g %d" editor path line_num
+        | "kate" ->
+          Fmt.str "%s -n -l %d %s" editor line_num path
         | _ ->
           fallback
       )
